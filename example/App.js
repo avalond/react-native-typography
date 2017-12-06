@@ -6,6 +6,7 @@ import { Constants } from "expo";
 import { iOSColors } from "react-native-typography";
 
 import MaterialScreen from "./screens/type/MaterialScreen";
+import MaterialTallScreen from "./screens/type/MaterialTallScreen";
 import MaterialDenseScreen from "./screens/type/MaterialDenseScreen";
 import HumanScreen from "./screens/type/HumanScreen";
 import iOSUIKitScreen from "./screens/type/iOSUIKitScreen";
@@ -65,6 +66,16 @@ const guidelinesStackNavigator = (screen, headerTitle) =>
 
 const Root = DrawerNavigator(
   {
+    materialTall: {
+      screen: guidelinesStackNavigator(
+        MaterialTallScreen,
+        "Material Design Tall"
+      ),
+      navigationOptions: ({ navigation }) => ({
+        drawerLabel: "Material Design Tall",
+        drawerIcon: drawerButton("logo-android", "logo-android")
+      })
+    },
     materialDense: {
       screen: guidelinesStackNavigator(
         MaterialDenseScreen,
