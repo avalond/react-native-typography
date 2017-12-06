@@ -66,6 +66,20 @@ const guidelinesStackNavigator = (screen, headerTitle) =>
 
 const Root = DrawerNavigator(
   {
+    human: {
+      screen: guidelinesStackNavigator(HumanScreen, "Human Interface"),
+      navigationOptions: ({ navigation }) => ({
+        drawerLabel: "Human Interface",
+        drawerIcon: drawerButton("logo-apple", "logo-apple")
+      })
+    },
+    material: {
+      screen: guidelinesStackNavigator(MaterialScreen, "Material Design"),
+      navigationOptions: ({ navigation }) => ({
+        drawerLabel: "Material Design",
+        drawerIcon: drawerButton("logo-android", "logo-android")
+      })
+    },
     materialTall: {
       screen: guidelinesStackNavigator(
         MaterialTallScreen,
@@ -83,20 +97,6 @@ const Root = DrawerNavigator(
       ),
       navigationOptions: ({ navigation }) => ({
         drawerLabel: "Material Design Dense",
-        drawerIcon: drawerButton("logo-android", "logo-android")
-      })
-    },
-    human: {
-      screen: guidelinesStackNavigator(HumanScreen, "Human Interface"),
-      navigationOptions: ({ navigation }) => ({
-        drawerLabel: "Human Interface",
-        drawerIcon: drawerButton("logo-apple", "logo-apple")
-      })
-    },
-    material: {
-      screen: guidelinesStackNavigator(MaterialScreen, "Material Design"),
-      navigationOptions: ({ navigation }) => ({
-        drawerLabel: "Material Design",
         drawerIcon: drawerButton("logo-android", "logo-android")
       })
     },
